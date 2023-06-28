@@ -29,10 +29,12 @@ def generate_qr_code(url, username):
 
     return temp_file.name
 
+
 client_id = 'e42b4a7dca28816'
 client_secret = '6322ed495e3cc9fc97e8d2323b9c624e16cb906f'
 
 client = ImgurClient(client_id, client_secret)
+
 
 @app.post("/qrCode/<string:username>")
 async def add_QR(username):
@@ -54,7 +56,6 @@ async def add_QR(username):
     os.unlink(temp_file_name)
 
     return jsonify(qrCode=imgur_link), 200
-
 
 
 @app.get("/logo.png")
