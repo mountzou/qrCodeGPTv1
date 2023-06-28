@@ -2,6 +2,6 @@ quart~=0.18.4
 quart-cors
 qrcode~=7.4.2
 gunicorn==20.1.0
-hypercorn==0.11.2
+hypercorn===0.14.3
 django-qrcode~=0.3
 imgurpython~=1.1.7
