@@ -1,0 +1,5 @@
+quart~=0.18.4
+quart-cors
+qrcode~=7.4.2
+django-qrcode~=0.3
+imgurpython~=1.1.7
