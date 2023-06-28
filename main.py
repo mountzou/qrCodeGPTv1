@@ -35,7 +35,6 @@ client_secret = '6322ed495e3cc9fc97e8d2323b9c624e16cb906f'
 
 client = ImgurClient(client_id, client_secret)
 
-
 @app.post("/qrCode/<string:username>")
 async def add_QR(username):
     request_data = await request.get_json(force=True)
@@ -80,9 +79,5 @@ async def openapi_spec():
         return quart.Response(text, mimetype="text/yaml")
 
 
-def main():
-    app.run(debug=True)
-
-
 if __name__ == "__main__":
-    main()
+    app.run(debug=True)
