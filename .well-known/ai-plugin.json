@@ -9,9 +9,9 @@
     },
     "api": {
       "type": "openapi",
-      "url": "http://localhost:5003/openapi.yaml"
+      "url": "https://chatgpt-qrcode-46d7d4ebefc8.herokuapp.com/openapi.yaml"
     },
-    "logo_url": "http://localhost:5003/logo.png",
+    "logo_url": "https://chatgpt-qrcode-46d7d4ebefc8.herokuapp.com/logo.png",
     "contact_email": "chrismountzou@gmail.com",
     "legal_info_url": "https://raw.githubusercontent.com/mountzou/qrCodeGPTv1/master/legal"
   }
