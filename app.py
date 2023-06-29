@@ -12,8 +12,7 @@ from imgurpython import ImgurClient
 
 app = quart_cors.cors(quart.Quart(__name__), allow_origin="https://chat.openai.com")
 
-
-def generate_qr_code(url, username):
+def generate_qr_code(url):
     qr = qrcode.QRCode(
         version=10,
         error_correction=qrcode.constants.ERROR_CORRECT_H,
@@ -35,11 +34,11 @@ client_secret = '6322ed495e3cc9fc97e8d2323b9c624e16cb906f'
 
 client = ImgurClient(client_id, client_secret)
 
-@app.post("/qrCode/<string:username>")
-async def add_QR(username):
+@app.post("/qrCode")
+async def add_QR():
     request_data = await request.get_json(force=True)
     url = request_data.get('url')
-    temp_file_name = generate_qr_code(url, username)
+    temp_file_name = generate_qr_code(url)
 
     # Upload the image to Imgur and get the link
     config = {
@@ -80,4 +79,4 @@ async def openapi_spec():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=5003)
